@@ -10,13 +10,14 @@ Skills follow the [Agent Skills](https://agentskills.io/) format.
 
 ### elm-patterns
 
-Idiomatic Elm patterns for data modeling, type-system techniques, and TEA application structure. Covers all 25 patterns from [Elm Patterns](https://sporto.github.io/elm-patterns/) by Sebastian Porto, organized behind a symptom-based routing table.
+Idiomatic Elm patterns for data modeling, type-system techniques, and TEA application structure. Covers all 25 patterns from [Elm Patterns](https://sporto.github.io/elm-patterns/) by Sebastian Porto, plus public API design guidance from the [Elm package design guidelines](https://package.elm-lang.org/help/design-guidelines), organized behind a symptom-based routing table.
 
 **Use when:**
 
 - Writing or reviewing Elm code
 - Modeling data with custom types, `Maybe`, or `Result`
 - Designing module APIs (builder pattern, opaque types)
+- Designing or reviewing an Elm package's public API
 - Structuring TEA applications (Model/Msg/update/view)
 - Handling parent-child communication in nested TEA
 - Making update functions testable
@@ -25,6 +26,7 @@ Idiomatic Elm patterns for data modeling, type-system techniques, and TEA applic
 
 - Data modeling and API design (type blindness, minimize booleans, impossible states, parse don't validate, builder pattern, type iterator)
 - Type-system techniques (railway, pipeline builder, opaque types, phantom types, combinators)
+- Package API design (concrete use cases, avoiding gratuitous abstraction, data-structure-last argument order, private constructors, readable and non-repetitive names, qualified imports, documentation order, design workflow and review checklist)
 - TEA architecture (reusable views, nested TEA, child outcome, translator, global actions, effects pattern, update return pipeline)
 
 ## Installation
@@ -49,6 +51,10 @@ Review this Elm module for anti-patterns
 
 ```
 My child page needs to notify its parent after saving
+```
+
+```
+Review the public API of this Elm package
 ```
 
 ## Skill Structure
