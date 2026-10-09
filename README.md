@@ -29,6 +29,22 @@ Idiomatic Elm patterns for data modeling, type-system techniques, and TEA applic
 - Package API design (concrete use cases, avoiding gratuitous abstraction, data-structure-last argument order, private constructors, readable and non-repetitive names, qualified imports, documentation order, design workflow and review checklist)
 - TEA architecture (reusable views, nested TEA, child outcome, translator, global actions, effects pattern, update return pipeline)
 
+### postgres-rls-multi-tenancy
+
+Tenant isolation with PostgreSQL Row Level Security, focused on security and query performance. Adapted from [postgres-rls-multi-tenancy](https://github.com/wenceslauAndre/postgres-rls-multi-tenancy), with claims checked against the PostgreSQL docs and plan behavior measured on PostgreSQL 18.
+
+**Use when:**
+
+- Adding or auditing RLS policies for a multi-tenant app
+- Creating the application role and wiring tenant context through a pool or PgBouncer
+- Reviewing `SECURITY DEFINER` functions, views, constraints, or foreign keys for cross-tenant leaks
+- Diagnosing slow queries or empty results under RLS
+
+**Covers:**
+
+- Security: role exemptions, `FORCE`, transaction-local context, fail-closed policies, constraint oracles, startup and CI guards
+- Performance: `InitPlan`-wrapped policies, tenant-leading indexes, leakproof operators, membership policies, how to read plans as the app role
+
 ## Installation
 
 ```bash
